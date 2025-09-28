@@ -40,7 +40,7 @@ database_categories = {
     },
     "Structure": {
         "AlphaFold DB": "https://alphafold.ebi.ac.uk/search/text/{gene}",
-        "PDB": "https://www.rcsb.org/search?request={%22query%22:{%22type%22:%22terminal%22,%22service%22:%22text%22,%22parameters%22:{%22value%22:%22{gene}%22}},%22return_type%22:%22entry%22}"
+        # "PDB": "https://www.rcsb.org/search?request={%22query%22:{%22type%22:%22terminal%22,%22service%22:%22text%22,%22parameters%22:{%22value%22:%22{gene}%22}},%22return_type%22:%22entry%22}"
     }
 }
 
@@ -125,31 +125,31 @@ if user_input:
                 cols[idx % 4].markdown(btn_html, unsafe_allow_html=True)
                 idx += 1
 
-        # # Ensembl metadata
-        # with st.expander("📊 Ensembl Metadata"):
-        #     ensembl_meta = fetch_ensembl_metadata(ensembl_id)
-        #     if ensembl_meta:
-        #         meta_table = pd.DataFrame({
-        #             "Property": ["Gene Symbol", "Description", "Biotype", "Chromosome", "Start", "End"],
-        #             "Value": [
-        #                 ensembl_meta.get("display_name"),
-        #                 ensembl_meta.get("description"),
-        #                 ensembl_meta.get("biotype"),
-        #                 ensembl_meta.get("seq_region_name"),
-        #                 ensembl_meta.get("start"),
-        #                 ensembl_meta.get("end")
-        #             ]
-        #         })
-        #         # Ensure all values are strings so Streamlit/pyarrow can serialize the table
-        #         meta_table["Value"] = meta_table["Value"].apply(lambda v: "" if v is None else str(v))
-        #         st.table(meta_table)
+        # Ensembl metadata
+        with st.expander("📊 Ensembl Metadata"):
+            ensembl_meta = fetch_ensembl_metadata(ensembl_id)
+            if ensembl_meta:
+                meta_table = pd.DataFrame({
+                    "Property": ["Gene Symbol", "Description", "Biotype", "Chromosome", "Start", "End"],
+                    "Value": [
+                        ensembl_meta.get("display_name"),
+                        ensembl_meta.get("description"),
+                        ensembl_meta.get("biotype"),
+                        ensembl_meta.get("seq_region_name"),
+                        ensembl_meta.get("start"),
+                        ensembl_meta.get("end")
+                    ]
+                })
+                # Ensure all values are strings so Streamlit/pyarrow can serialize the table
+                meta_table["Value"] = meta_table["Value"].apply(lambda v: "" if v is None else str(v))
+                st.table(meta_table)
 
-        # # UniProt metadata
-        # with st.expander("🧬 UniProt Metadata"):
-        #     uniprot_meta = fetch_uniprot_metadata(gene)
-        #     if uniprot_meta:
-        #         rows = [(k, "" if v is None else str(v)) for k, v in uniprot_meta.items()]
-        #         st.table(pd.DataFrame(rows, columns=["Property", "Value"]))
+        # UniProt metadata
+        with st.expander("🧬 UniProt Metadata"):
+            uniprot_meta = fetch_uniprot_metadata(gene)
+            if uniprot_meta:
+                rows = [(k, "" if v is None else str(v)) for k, v in uniprot_meta.items()]
+                st.table(pd.DataFrame(rows, columns=["Property", "Value"]))
 
     else:
         st.error("❌ Could not resolve gene or Ensembl ID.")

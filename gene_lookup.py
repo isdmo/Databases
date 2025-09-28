@@ -16,21 +16,22 @@ database_categories = {
     "Gene / Genome": {
         "Ensembl": "https://www.ensembl.org/Homo_sapiens/Gene/Summary?g={ensembl_id}",
         "GeneCards": "https://www.genecards.org/cgi-bin/carddisp.pl?gene={gene}",
-        "NCBI Gene": "https://www.ncbi.nlm.nih.gov/gene/?term={gene}",
-        "OMIM": "https://omim.org/search?search={gene}"
+        "NCBI Gene": "https://www.ncbi.nlm.nih.gov/gene/?term={gene}"
     },
     "Protein & Localization": {
         "UniProt": "https://www.uniprot.org/uniprotkb?query={gene}",
         "Protein Atlas": "https://www.proteinatlas.org/{ensembl_id}",
-        "OpenCell": "https://opencell.czbiohub.org/gene/{gene}"
+        "GTEx": "https://gtexportal.org/home/gene/{gene}"
     },
-    "Population & Variation": {
+    "Population, Variation & Disease": {
         "gnomAD": "https://gnomad.broadinstitute.org/gene/{gene}",
         "ClinVar": "https://www.ncbi.nlm.nih.gov/clinvar/?term={gene}",
-        "dbSNP": "https://www.ncbi.nlm.nih.gov/snp/?term={gene}"
+        "dbSNP": "https://www.ncbi.nlm.nih.gov/snp/?term={gene}",
+        "OMIM": "https://omim.org/search?search={gene}",
+        "cBioPortal": "https://www.cbioportal.org/results/cancerTypesSummary?geneId={gene}"
     },
     "Expression & Functional": {
-        "GTEx": "https://gtexportal.org/home/gene/{gene}",
+        "OpenCell": "https://opencell.czbiohub.org/gene/{gene}",
         "DepMap": "https://depmap.org/portal/gene/{gene}"
     },
     "Pathways & Interactions": {
@@ -39,8 +40,9 @@ database_categories = {
         "UCSC Genome": "https://genome.ucsc.edu/cgi-bin/hgGene?db=hg38&hgg_gene={gene}",
     },
     "Structure": {
-        "AlphaFold DB": "https://alphafold.ebi.ac.uk/search/text/{gene}"
-    }
+        "AlphaFold DB": "https://alphafold.ebi.ac.uk/search/text/{gene}",
+        "PDB": "https://www.rcsb.org/search?request={%22query%22:{%22type%22:%22terminal%22,%22service%22:%22text%22,%22parameters%22:{%22value%22:%22{gene}%22}},%22return_type%22:%22entry%22}"
+
 }
 
 # --- Fetch helpers ---

@@ -37,6 +37,8 @@ database_categories = {
         "STRING": "https://string-db.org/cgi/network?identifiers={gene}&species=9606",
         "Reactome": "https://reactome.org/content/query?q={gene}",
         "UCSC Genome": "https://genome.ucsc.edu/cgi-bin/hgGene?db=hg38&hgg_gene={gene}",
+    },
+    "Structure": {
         "AlphaFold DB": "https://alphafold.ebi.ac.uk/search/text/{gene}"
     }
 }

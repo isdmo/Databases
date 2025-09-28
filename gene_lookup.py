@@ -42,7 +42,7 @@ database_categories = {
     "Structure": {
         "AlphaFold DB": "https://alphafold.ebi.ac.uk/search/text/{gene}",
         "PDB": "https://www.rcsb.org/search?request={%22query%22:{%22type%22:%22terminal%22,%22service%22:%22text%22,%22parameters%22:{%22value%22:%22{gene}%22}},%22return_type%22:%22entry%22}"
-
+    }
 }
 
 # --- Fetch helpers ---

@@ -31,7 +31,7 @@ database_categories = {
         "cBioPortal": "https://www.cbioportal.org/results/cancerTypesSummary?geneId={gene}"
     },
     "Expression & Functional": {
-        "OpenCell": "https://opencell.czbiohub.org/gene/{gene}",
+        "OpenCell": "https://opencell.czbiohub.org/gene/{ensembl_id}",
         "DepMap": "https://depmap.org/portal/gene/{gene}"
     },
     "Pathways & Interactions": {

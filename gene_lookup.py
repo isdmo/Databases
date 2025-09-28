@@ -28,8 +28,7 @@ database_categories = {
         "ClinVar": "https://www.ncbi.nlm.nih.gov/clinvar/?term={gene}",
         "dbSNP": "https://www.ncbi.nlm.nih.gov/snp/?term={gene}",
         "OMIM": "https://omim.org/search?search={gene}",
-        "cBioPortal": "https://www.cbioportal.org/results/cancerTypesSummary?geneId={gene}"
-    },
+        "cBioPortal": "https://www.cbioportal.org/results/cancerTypesSummary?case_set_id=all&gene_list={gene}&cancer_study_list=5c8a7d55e4b046111fee2296"},
     "Expression & Functional": {
         "OpenCell": "https://opencell.czbiohub.org/gene/{ensembl_id}",
         "DepMap": "https://depmap.org/portal/gene/{gene}"
